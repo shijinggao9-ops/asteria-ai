@@ -7,7 +7,7 @@ AI-native Workspace for Business Research.
 Help business students conduct structured business research with AI.
 
 ## MVP
-
+for business students who need efficient research support
 - Research Workspace
 - AI Business Analysis
 - Evidence Library
