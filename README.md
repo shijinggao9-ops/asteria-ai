@@ -9,7 +9,7 @@ Help business students conduct structured business research with AI.
 ## MVP
 for business students who need efficient research support
 - Research Workspace
-- AI Business Analysis
+- AI-assisted Business Analysis
 - Evidence Library
 - Report Export
 # asteria-ai
