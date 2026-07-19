@@ -34,8 +34,9 @@ export async function POST(
 
     }
 
-    const result =
-      await parsePDF(file);
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const result = await parsePDF(buffer);
 
     return NextResponse.json(result);
 

@@ -1,36 +1,14 @@
-import * as PdfParse from "pdf-parse-new";
+import { PDFParse } from "pdf-parse";
 
-import { ParsedDocument } from "./types";
+export async function parsePDF(buffer: Buffer) {
+  const parser = new PDFParse({ data: buffer });
 
-export async function parsePDF(
-  file: File
-): Promise<ParsedDocument> {
+  const result = await parser.getText();
 
-  const buffer = Buffer.from(
-    await file.arrayBuffer()
-  );
-
-  const pdf = await PdfParse.default(buffer);
-
-  const text = pdf.text ?? "";
+  await parser.destroy();
 
   return {
-
-    fileName: file.name,
-    fileType: file.type,
-    fileSize: file.size,
-    pageTexts: [text],
-    text,
-    pages: pdf.numpages,
-
-    words:
-      text
-        .trim()
-        .split(/\s+/)
-        .filter(Boolean).length,
-
-    characters: text.length,
-
+    text: result.text,
+    pages: result.pages.length,
   };
-
 }
