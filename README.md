@@ -62,7 +62,6 @@ Users can upload research materials, organize evidence, conduct AI-powered busin
 
 # 🖥 Preview
 
-> *(Replace these placeholders with screenshots later.)*
 
 ## Dashboard
 
